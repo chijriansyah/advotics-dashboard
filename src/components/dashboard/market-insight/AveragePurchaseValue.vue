@@ -10,7 +10,7 @@
             class="select-chart"
             @change="changeSeries()"
           ></b-form-select>
-          <a href="#"
+          <a href="#average"
             ><img
               class="icon-more"
               :src="require('@/assets/images/Icon - More - Filled.svg')"

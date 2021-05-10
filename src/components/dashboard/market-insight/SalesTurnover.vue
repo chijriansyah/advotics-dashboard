@@ -3,7 +3,7 @@
     <b-card>
       <div class="d-flex justify-content-between">
         <p class="m-0 sales-turnover">Sales Turnover</p>
-        <a href="#"
+        <a href="#sales"
           ><img
             class="icon-more"
             :src="require('@/assets/images/Icon - More - Filled.svg')"

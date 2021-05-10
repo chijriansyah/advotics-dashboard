@@ -3,7 +3,7 @@
     ><b-card class="h-100">
       <div class="d-flex justify-content-between align-items-center mb-16px">
         <p class="card-title">{{ title }}</p>
-        <a href="#"
+        <a href="#sku"
           ><img
             class="icon-more"
             :src="require('@/assets/images/Icon - More - Filled.svg')"
