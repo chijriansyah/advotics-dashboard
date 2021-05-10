@@ -38,3 +38,38 @@ export default {
   name: "SalesTurnover",
 };
 </script>
+
+<style scoped>
+.sales-turnover {
+  font-weight: lighter;
+  color: #8b8b8b;
+}
+
+.icon-turnover {
+  height: 43px;
+  width: 49px;
+  margin: auto;
+}
+
+.nominal-sales {
+  font-size: 26px;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.icon-down {
+  height: 10px;
+  width: 10px;
+}
+
+.nominal-down {
+  margin: 0 5px;
+  color: red;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.nominal-small {
+  font-size: 10px;
+}
+</style>

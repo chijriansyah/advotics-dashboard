@@ -14,6 +14,21 @@
           :ranges="range"
           @toggle="openToggleCalendar = !openToggleCalendar"
         >
+          <div
+            slot="header"
+            slot-scope="data"
+            class="slot d-flex justify-content-between align-items-center p-2"
+            style="border-bottom: 1px solid #ddd"
+          >
+            <div class="d-flex align-items-center">
+              <img :src="require('@/assets/images/calendar.png')" />
+              <span class="period">Period</span>
+            </div>
+            <b-icon-x
+              @click="data.clickCancel"
+              style="width: 25px; height: 25px; cursor: pointer"
+            ></b-icon-x>
+          </div>
           <template v-slot:input="picker" style="min-width: 350px">
             <img :src="require('@/assets/images/calendar.png')" />
             <span class="period">Period</span>
@@ -27,17 +42,9 @@
             <template v-else>
               <b-icon-chevron-down></b-icon-chevron-down>
             </template>
-            <!-- {{ picker.startDate | date }} - {{ picker.endDate | date }} -->
           </template>
-          <!--    footer slot-->
           <div slot="footer" slot-scope="data" class="footer-slot-daterange">
             <div>
-              <button
-                @click="data.clickCancel"
-                class="cancelBtn btn btn-secondary btn-md"
-              >
-                Cancel
-              </button>
               <button
                 @click="data.clickApply"
                 :disabled="data.in_selection"
@@ -91,7 +98,7 @@
 import SalesTurnover from "@/components/dashboard/market-insight/SalesTurnover";
 import AveragePurchaseValue from "@/components/dashboard/market-insight/AveragePurchaseValue";
 import CardSKU from "@/components/dashboard/market-insight/CardSKU";
-import { BIconChevronDown, BIconChevronUp } from "bootstrap-vue";
+import { BIconChevronDown, BIconChevronUp, BIconX } from "bootstrap-vue";
 
 import DateRangePicker from "vue2-daterange-picker";
 import "vue2-daterange-picker/dist/vue2-daterange-picker.css";
@@ -107,6 +114,7 @@ export default {
     DateRangePicker,
     BIconChevronDown,
     BIconChevronUp,
+    BIconX,
   },
   filters: {
     toDate(date) {
@@ -145,6 +153,7 @@ export default {
         format: "d mmmm yyyy",
         applyLabel: "Apply",
         cancelLabel: "Cancel",
+        firstDay: 1,
       };
     },
     last6months() {
@@ -192,3 +201,91 @@ export default {
   },
 };
 </script>
+
+<style>
+.vue-daterange-picker {
+  float: right;
+}
+
+.reportrange-text {
+  background-color: #fff !important;
+  padding: 10px !important;
+  box-shadow: 0px 2px 3px #00000029;
+  border-radius: 2px !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.period {
+  font-size: 16px;
+  margin: 0 22px 0 16px;
+  color: #8b8b8b;
+  font-family: Open Sans;
+}
+
+.period-range {
+  font-size: 16px;
+  color: #6a6a6a;
+  margin-right: 16px;
+  font-family: Open Sans;
+}
+
+.footer-slot-daterange {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.applyBtn {
+  min-width: 125px;
+}
+
+.daterangepicker .ranges li.active {
+  background-color: #37b04c;
+}
+
+.daterangepicker td.start-date,
+.daterangepicker td.end-date,
+.daterangepicker td.start-date.end-date {
+  border-radius: 50%;
+}
+
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+  background-color: #37b04c;
+}
+
+.daterangepicker td.in-range {
+  border-radius: 50%;
+  font-weight: bold;
+}
+</style>
+
+<style scoped>
+.title {
+  margin: 0 0 30px;
+}
+
+.btn-market {
+  background-color: #37b04c !important;
+  height: 48px;
+  border-radius: 2px !important;
+  border: none !important;
+}
+
+.market-text-btn {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.help {
+  color: #fff;
+  font-size: 14px;
+  margin: 0 16px 0 4px;
+  font-weight: lighter;
+}
+
+.help:hover {
+  color: #fff;
+}
+</style>

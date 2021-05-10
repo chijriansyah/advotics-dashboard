@@ -69,17 +69,12 @@ export default {
 
 <style>
 #app {
-  /* font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px; */
   background-color: #f7f7f7;
 }
-</style>
 
-<style>
 .nav-bar {
   background-color: #ffffff;
   padding: 0 34px;
@@ -108,6 +103,7 @@ export default {
   font-size: 11px;
   color: #5b5b5b;
   margin: 0 5px 0 10px;
+  font-family: Open Sans;
 }
 
 .logo-small {
@@ -129,6 +125,7 @@ export default {
   color: #727272;
   text-align: right;
   margin-bottom: 0;
+  font-family: Open Sans;
 }
 
 .company {
@@ -136,6 +133,8 @@ export default {
   color: #727272;
   text-align: right;
   margin-bottom: 0;
+  font-family: Open Sans;
+  font-weight: 300;
 }
 
 .logout {
@@ -147,6 +146,7 @@ export default {
 .dashboard-title {
   font-size: 40px;
   color: #707070c4;
+  font-weight: 600;
 }
 
 .sidebar {
@@ -159,17 +159,16 @@ export default {
 }
 
 .sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
+  height: 100%;
   width: 72px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
+  position: fixed;
+  z-index: 1;
   left: 0;
-  background-color: #fff; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
+  background-color: #fff;
+  overflow-x: hidden;
   border-right: 0.5px solid #d2d2d2;
 }
 
-/* The navigation menu links */
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
@@ -178,12 +177,10 @@ export default {
   display: block;
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: #f1f1f1;
 }
 
-/* Style page content */
 .main {
   margin-left: 72px; /* Same as the width of the sidebar */
   padding: 32px;
@@ -217,125 +214,9 @@ export default {
   border-radius: 2px;
 }
 
-.title {
-  margin: 0 0 30px;
-}
-
-.vue-daterange-picker {
-  float: right;
-}
-
-.reportrange-text {
-  background-color: #fff !important;
-  padding: 10px !important;
-  box-shadow: 0px 2px 3px #00000029;
-  border-radius: 2px !important;
-  border: none !important;
-  display: flex !important;
-  align-items: center !important;
-}
-
-.period {
-  font-size: 16px;
-  margin: 0 22px 0 16px;
-  color: #8b8b8b;
-}
-
-.period-range {
-  font-size: 16px;
-  color: #6a6a6a;
-  margin-right: 16px;
-}
-
-.footer-slot-daterange {
-  padding: 10px;
-  border-top: 1px solid #ddd;
-}
-
-.applyBtn {
-  margin-left: 10px;
-}
-
-.daterangepicker .ranges li.active {
-  background-color: #37b04c;
-}
-
-.daterangepicker td.start-date,
-.daterangepicker td.end-date,
-.daterangepicker td.start-date.end-date {
-  border-radius: 50%;
-}
-
-.daterangepicker td.active,
-.daterangepicker td.active:hover {
-  background-color: #37b04c;
-}
-
-.daterangepicker td.in-range {
-  /* background-color: #37b04c24; */
-  border-radius: 50%;
-  font-weight: bold;
-}
-
-.sales-turnover {
-  font-weight: lighter;
-  color: #8b8b8b;
-}
-
-.btn-market {
-  background-color: #37b04c !important;
-  height: 48px;
-  border-radius: 2px !important;
-  border: none !important;
-}
-
-.market-text-btn {
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.help {
-  color: #fff;
-  font-size: 14px;
-  margin: 0 16px 0 4px;
-  font-weight: lighter;
-}
-
-.help:hover {
-  color: #fff;
-}
-
 .icon-more {
   height: 24px;
   width: 12px;
-}
-
-.icon-turnover {
-  height: 43px;
-  width: 49px;
-  margin: auto;
-}
-
-.nominal-sales {
-  font-size: 24px;
-  font-weight: bolder;
-  margin: 0;
-}
-
-.icon-down {
-  height: 10px;
-  width: 10px;
-}
-
-.nominal-down {
-  margin: 0 5px;
-  color: red;
-  font-size: 10px;
-  font-weight: bold;
-}
-
-.nominal-small {
-  font-size: 10px;
 }
 
 .card {
@@ -348,10 +229,6 @@ export default {
   color: #4d4f5c;
   font-size: 20px;
   margin: 0 !important;
-}
-
-.card-item:first-child {
-  margin-top: 16px;
 }
 
 .card-item:not(:first-child) {
@@ -367,72 +244,7 @@ export default {
   padding: 0 !important;
 }
 
-.select-chart {
-  margin-right: 16px;
-  color: #4d4f5c;
-  font-size: 12px;
-  padding: 10px;
-  box-shadow: 0px 2px 3px #0000000d;
-  border: 1px solid #d7dae2;
-  border-radius: 2px;
-  cursor: pointer;
-}
-
-.big-item {
-  display: flex;
-  background-color: #ffe7bd;
-  border-radius: 4px;
-  height: 80px;
-}
-
-.big-item img {
-  height: 80px;
-  width: 80px;
-  border-radius: 4px 0 0;
-}
-
-.big-item .detail-item {
-  padding: 10px;
-  width: 100%;
-}
-
-.big-item .detail-item p {
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-.big-item .detail-text p {
-  margin: 0;
-  font-size: 14px;
-  color: #00000099;
-}
-
-.small-item {
-  display: flex;
-  background-color: #fff;
-  border-radius: 4px;
-  height: 60px;
-}
-
-.small-item img {
-  height: 60px;
-  width: 60px;
-  border-radius: 4px 0 0;
-}
-
-.small-item .detail-item {
-  padding: 10px;
-  width: 100%;
-}
-
-.small-item .detail-item p {
-  margin-bottom: 0px;
-  font-size: 16px;
-}
-
-.small-item .detail-text p {
-  margin: 0;
-  font-size: 12px;
-  color: #00000099;
+.mb-16px {
+  margin-bottom: 16px;
 }
 </style>
